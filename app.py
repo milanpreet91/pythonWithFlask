@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, render_template
+
 app = Flask(__name__) # name references app.py file
 #app is object of class Flask
 #__name__ : refers to how the script is invoked. 
@@ -12,8 +13,8 @@ app = Flask(__name__) # name references app.py file
 #Use decorator for registering
 #when url / accessed, print "hello_world"
 @app.route('/') #pass url route for home
-def index():
-    return "Hello World"
+def home_page():
+    return render_template('home_page.html')
 
 #if running app.py as a script, 
 # then start the app using below command
