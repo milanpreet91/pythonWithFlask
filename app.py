@@ -12,9 +12,29 @@ app = Flask(__name__) # name references app.py file
 #<domain_name>/<route>: jovian.com/profile
 #Use decorator for registering
 #when url / accessed, print "hello_world"
+PROJECTS = [
+    {
+        'id':1,
+        'title':'Project 1',
+        'Description': 'An amazing project 1',
+        'Skills' : 'C++, Python' 
+    },
+    {
+        'id':2,
+        'title':'Project 2',
+        'Description': 'An amazing project 2',
+        'Skills' : 'C++, Python' 
+    },
+    {
+        'id':3,
+        'title':'Project 3',
+        'Description': 'An amazing project 3',
+        'Skills' : 'C++, Python' 
+    }
+]
 @app.route('/') #pass url route for home
 def home_page():
-    return render_template('home_page.html')
+    return render_template('home_page.html', projects=PROJECTS)
 
 #if running app.py as a script, 
 # then start the app using below command
